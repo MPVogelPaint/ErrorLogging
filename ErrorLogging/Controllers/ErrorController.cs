@@ -10,9 +10,6 @@ namespace ErrorLogging.Controllers
 {
     public class ErrorController : ApiController
     {
-        //Need to import Microsoft.AspNet.WebApi.Cors via nuget
-        //Because this api app is running on a separate port from the angular app it needs to allow XHR from the target ng app
-        [EnableCors(origins: "http://localhost:4201", headers: "*", methods: "*")]
         public void Post(string type, string message, string stack, string location)
         {
             //Log this error to the database.
